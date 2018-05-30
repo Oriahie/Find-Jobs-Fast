@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>FJF</title>
-
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="Content/Temp/img/favicon.ico" />
     <link href="Content/LP/css/base.css" rel="stylesheet" />
     <link href="Content/LP/css/demo1.css" rel="stylesheet" />
@@ -18,9 +18,9 @@
             </header>
         </div>
 
-      
         <a class="pater">
-            <span id="spanUsername" class="text-muted"></span>
+            <span id="spanUsername"></span>
+            <input id="btnLogout" class="btn btn-dark pull-right" type="button" value="Log Out" />
         </a>
 
         <div class="content">
@@ -53,7 +53,7 @@
         </div>
     </main>
 
-
+    
 
 
     <script src="Content/LP/js/demo.js"></script>
@@ -63,9 +63,14 @@
     <script src="Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            $('#btnLogout').click(function () {
+                localStorage.removeItem('accessToken');
+                window.location.href = "Login.html";
+            });
+
             $('#spanUsername').text('Hello ' + localStorage.getItem('userName'));
+
             $(function () {
-                $('#spanUsername').text('Hello ' + localStorage.getItem('userName'));
 
                 if (localStorage.getItem('accessToken') == null) {
                     window.location.href = "Login.html";
@@ -73,23 +78,5 @@
             });
         });
     </script>
-
-
-
-
-
-    <!--<script type="text/javascript">
-        $(function () {
-            $('#spanUsername').text('Hello ' + localStorage.getItem('userName'));
-
-            if (localStorage.getItem('accessToken') == null) {
-                window.location.href = "Login.html";
-            }
-
-
-        })
-    </script>-->
-
-
 </body>
 </html>
