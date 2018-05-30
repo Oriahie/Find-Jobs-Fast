@@ -19,7 +19,7 @@ namespace FindJobsFast_FJF_.Messaging
                 mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", "2");
                 mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", "1");
                 mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "Oriahie@gmail.com");
-                mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "tennyson10");
+                mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", " ");
                 mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", "true");
                 mail.From = "info@fjf.com";//msg.From;//
                 mail.To = msg.Recipient;

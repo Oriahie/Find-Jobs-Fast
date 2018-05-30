@@ -43,13 +43,16 @@
                         </span>
                     </div>
                     <div class="container-login100-form-btn">
-                        <input id="btnLogin" class="btn btn-success login100-form-btn" type="button" value="Login" />
+                        <input id="btnLogin" class="btn btn-success login100-form-btn" type="button" value="Login" style="display:inline" />  
+                    </div>
+                    <div class="row pull-right">
+                        <img id="loader" src="Content/ajax-loader.gif" style="display:none" />
                     </div>
 
                     <div class="text-center p-t-136">
                         <a class="txt2" href="Register.html">
                             Create your Account
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i> 
+                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
                     </div>
                 </form>
@@ -76,6 +79,16 @@
         $(document).ready(function () {
 
             $('#btnLogin').click(function () {
+                $.ajaxSetup({
+                    beforeSend: function () {
+                        $('#loader').show();
+                    },
+                    complete: function () {
+                        $('#loader').hide();
+                    }
+                
+                    
+                });
                 $.ajax({
                     url: '/token',
                     method: 'POST',

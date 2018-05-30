@@ -17,8 +17,12 @@
                 <a href="Data.html">View All Users</a>
             </header>
         </div>
-        
-       
+
+      
+        <a class="pater">
+            <span id="spanUsername" class="text-muted"></span>
+        </a>
+
         <div class="content">
             <canvas class="scene scene--full" id="scene"></canvas>
             <script type="x-shader/x-vertex" id="wrapVertexShader">
@@ -56,7 +60,36 @@
     <script src="Content/LP/js/three.min.js"></script>
     <script src="Content/LP/js/TweenMax.min.js"></script>
     <script src="Content/LP/js/demo1.js"></script>
-    
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#spanUsername').text('Hello ' + localStorage.getItem('userName'));
+            $(function () {
+                $('#spanUsername').text('Hello ' + localStorage.getItem('userName'));
+
+                if (localStorage.getItem('accessToken') == null) {
+                    window.location.href = "Login.html";
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+    <!--<script type="text/javascript">
+        $(function () {
+            $('#spanUsername').text('Hello ' + localStorage.getItem('userName'));
+
+            if (localStorage.getItem('accessToken') == null) {
+                window.location.href = "Login.html";
+            }
+
+
+        })
+    </script>-->
+
 
 </body>
 </html>
